@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="675.0" style="-fx-background-color:#D9E3F2;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.ProgressController">
+  <children>
+    <Label fx:id="lblPrompt" layoutX="148.0" layoutY="86.0" prefHeight="30.0" prefWidth="250.0" text="Executing following tasks">
+      <font>
+        <Font size="18.0" />
+      </font>
+      <textFill>
+        <Color blue="0.357" green="0.200" red="0.129" fx:id="x3" />
+      </textFill>
+    </Label>
+    <Group id="Group" fx:id="progressBars" layoutX="247.0" layoutY="154.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="0.0" spacing="5.0">
+          <children>
+            <StackPane id="StackPane" maxHeight="23.0" maxWidth="25.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <ImageView id="imgDone" fx:id="imgDone1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="false" visible="false">
+                  <image>
+                    <Image url="@../images/tick.png" />
+                  </image>
+                </ImageView>
+                <ProgressIndicator fx:id="progress1" minWidth="14.0" prefHeight="23.000099999997474" prefWidth="25.0" progress="-1.0" />
+              </children>
+            </StackPane>
+            <Label fx:id="lblOne" text="Task 1">
+              <font>
+                <Font name="System Bold" size="12.0" fx:id="x1" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="44.0" spacing="5.0">
+          <children>
+            <StackPane id="StackPane">
+              <children>
+                <ImageView fx:id="imgDone2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="false" visible="false">
+                  <image>
+                    <Image url="@../images/tick.png" />
+                  </image>
+                </ImageView>
+                <ProgressIndicator fx:id="progress2" minWidth="14.0" prefHeight="23.000099999997474" prefWidth="25.0" progress="-1.0" />
+              </children>
+            </StackPane>
+            <Label fx:id="lblTwo" font="$x1" text="Task 2" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="89.0" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <StackPane id="StackPane">
+              <children>
+                <ImageView fx:id="imgDone3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="false" visible="false">
+                  <image>
+                    <Image url="@../images/tick.png" />
+                  </image>
+                </ImageView>
+                <ProgressIndicator fx:id="progress3" prefHeight="23.0" prefWidth="25.0" progress="-1.0" />
+              </children>
+            </StackPane>
+            <Label fx:id="lblThree" font="$x1" text="Task 3" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="138.0" spacing="5.0">
+          <children>
+            <StackPane id="StackPane">
+              <children>
+                <ImageView fx:id="imgDone4" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="false" visible="false">
+                  <image>
+                    <Image url="@../images/tick.png" />
+                  </image>
+                </ImageView>
+                <ProgressIndicator fx:id="progress4" prefHeight="23.0" prefWidth="25.0" progress="-1.0" />
+              </children>
+            </StackPane>
+            <Label fx:id="lblFour" font="$x1" text="Task 4" />
+          </children>
+        </HBox>
+      </children>
+    </Group>
+    <Button fx:id="btnProceed" layoutX="471.0" mnemonicParsing="false" onAction="#proceed" prefHeight="30.0" prefWidth="186.85968017578125" style="-fx-cursor:hand;" styleClass="btnProceed" text="Finish" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="50.0">
+      <font>
+        <Font name="System Bold" size="16.0" fx:id="x2" />
+      </font>
+    </Button>
+    <ProgressBar fx:id="progressOverall" layoutX="0.0" layoutY="435.0" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="675.0" progress="0.02" />
+    <ProgressBar fx:id="progressCurrent" layoutX="0.0" layoutY="435.0" maxWidth="1.7976931348623157E308" opacity="0.5" prefHeight="16.0" prefWidth="675.0" progress="0.02" />
+    <Accordion fx:id="accordian" layoutX="0.0" layoutY="450.0" minHeight="175.0" prefHeight="175.0" prefWidth="675.0">
+      <expandedPane>
+        <TitledPane fx:id="titledPaneConsole" animated="false" expanded="true" minHeight="175.0" prefHeight="175.0" text="Console">
+          <content>
+            <TextArea fx:id="txtConsole" editable="false" minHeight="-1.0" prefHeight="175.0" prefWidth="672.0" style="-fx-background-color:black;&#10;-fx-text-fill:white;" text="" wrapText="true" />
+          </content>
+        </TitledPane>
+      </expandedPane>
+      <panes>
+        <fx:reference source="titledPaneConsole" />
+      </panes>
+    </Accordion>
+  </children>
+  <stylesheets>
+    <URL value="@../css/progress.css" />
+  </stylesheets>
+</AnchorPane>

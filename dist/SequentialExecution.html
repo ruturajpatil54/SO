@@ -1,0 +1,44 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'SequentialExecution.jnlp'
+            },
+            {
+                javafx : '2.2+',
+                jvmargs : '-Xmx1024m -verbose:jni '
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbed() {
+        dtjava.embed(
+            {
+                url : 'SequentialExecution.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : 800,
+                height : 600
+            },
+            {
+                javafx : '2.2+',
+                jvmargs : '-Xmx1024m -verbose:jni '
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbed);
+</script>
+
+</head><body>
+<h2>Test page for <b>SequentialExecution</b></h2>
+  <b>Webstart:</b> <a href='SequentialExecution.jnlp' onclick="return launchApplication('SequentialExecution.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

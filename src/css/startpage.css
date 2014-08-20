@@ -1,0 +1,13 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: white;
+}
+.btnProceed{
+     -fx-background-color: #336699;
+    -fx-border-radius: 40;
+    -fx-border-width: 1;
+    -fx-text-fill:white;
+}

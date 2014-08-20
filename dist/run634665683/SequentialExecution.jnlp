@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SequentialExecution.jnlp">
+  <information>
+    <title>Setup</title>
+    <vendor>Unknown vendor</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <icon href="c:\3Pi.ico"  kind="default" width="32" height="32" depth="8"/>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Xmx1024m -verbose:jni "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SequentialExecution.jar" size="42061" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="SequentialExecution" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="main.Installer"  name="SequentialExecution" />
+  <update check="background"/>
+</jnlp>
